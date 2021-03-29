@@ -10,7 +10,7 @@ export default class UsersRoute extends AbstractRouteRoute {
       connected: this.userAuth.user,
     });
   }
-  
+
   @action remove(user, model) {
     set(model, 'deleted', user);
     user.destroyRecord().then(() => { });

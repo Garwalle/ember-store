@@ -7,7 +7,7 @@ export default class ProductsAddRoute extends Route {
     return RSVP.hash({
       sections: this.store.findAll('section'),
       products: this.store.findAll('product'),
-      product: {packs:[]},
+      product: { packs: [] },
     });
   }
   @action save(p) {

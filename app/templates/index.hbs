@@ -1,7 +1,11 @@
 {{page-title "Index"}}
-<form class="ui inline form" {{action "login" @model on="submit"}}>
-  <Input class="ui input" type="email" @value={{@model.email}} placeholder="Votre email"/>
-  <Input class="ui input" type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
+<form class="ui inline form" {{action "login" @model on="submit" }}>
+  <Input class="ui input" type="email" @value={{@model.email}} placeholder="Votre email" />
+  <Input class="ui input" type="password" @value={{@model.password}} placeholder="Votre mot de passe" />
   <button class="ui fluid blue button" type="submit">Se connecter</button>
 </form>
+
+<button class="ui button">
+  Follow
+</button>
 {{outlet}}
