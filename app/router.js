@@ -14,4 +14,5 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path: 'update/:product_id' });
   });
+  this.route('dashboard');
 });

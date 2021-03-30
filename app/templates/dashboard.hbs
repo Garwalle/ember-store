@@ -1,0 +1,16 @@
+<h1>Dashboard</h1>
+
+{{#if @model.connected.id}}
+<h3>Hello {{@model.connected.firstname}}, welcome to your dashboard !</h3>
+
+<p>Your orders :</p>
+<ul>
+    {{#each @model.employee.orders as |order|}}
+    <li>{{order.dateCreation}} {{order.status}}</li>
+    {{/each}}
+</ul>
+
+{{else}}
+<h3>You need to be connected to access your dashboard.</h3>
+{{/if}}
+{{outlet}}

@@ -1,11 +1,22 @@
 {{page-title "Index"}}
-<form class="ui inline form" {{action "login" @model on="submit" }}>
-  <Input class="ui input" type="email" @value={{@model.email}} placeholder="Votre email" />
-  <Input class="ui input" type="password" @value={{@model.password}} placeholder="Votre mot de passe" />
-  <button class="ui fluid blue button" type="submit">Se connecter</button>
-</form>
+<h1>Hi welcome to the Store project !</h1>
 
-<button class="ui button">
-  Follow
-</button>
+<p>Here you normally can :</p>
+<ul>
+  <li>Go through the store</li>
+  <li>prepare command online</li>
+  <li>tell us when you want to retreive your command(s)</li>
+</ul>
+
+<p>But this project is not for visitor but employees, log in if you are one !</p>
+
+<form class="ui inline form" {{action "login" @model on="submit" }}>
+  <div class="field">
+    <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />
+  </div>
+  <div class="field">
+    <Input class="input" type="password" @value={{@model.password}} placeholder="Your password" required />
+  </div>
+  <button class="ui button" type="submit">Log in</button>
+</form>
 {{outlet}}
