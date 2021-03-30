@@ -5,14 +5,12 @@ import AbstractRouteRoute from "./abstract-route";
 
 export default class UsersRoute extends AbstractRouteRoute {
     model() {
-        return RSVP.hash({
-            employee: this.store.findRecord('employee', this.userAuth.user.id, { include: 'orders' }),
-            connected: this.userAuth.user,
-        });
-    }
-
-    @action remove(user, model) {
-        set(model, 'deleted', user);
-        user.destroyRecord().then(() => { });
+        if (this.userAuth.user) {
+            let employeeLogged = this.userAuth.user;
+            return RSVP.hash({
+                connected: employeeLogged,
+                orders: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'created' } }),
+            });
+        }
     }
 }
