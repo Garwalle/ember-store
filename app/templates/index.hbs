@@ -1,6 +1,6 @@
 {{page-title "Home"}}
 <div class="ui inverted segment">
-  <h1>Hi welcome to the Store project !</h1>
+  <h1>Welcome to the Store project !</h1>
 
   <p>Here you normally can :</p>
   <ul>
@@ -10,7 +10,6 @@
   </ul>
 
   <p>But this project is not for visitor but employees, log in if you are one !</p>
-
   <form class="ui inline form" {{action "login" @model on="submit" }}>
     <div class="field">
       <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />

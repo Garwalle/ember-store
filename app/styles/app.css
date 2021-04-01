@@ -27,6 +27,10 @@ body {
     text-decoration: underline;
 }
 
+#dashboardTitleSegment {
+    padding: 3vh;
+}
+
 h1 {
     text-align: center;
     text-decoration: underline;
