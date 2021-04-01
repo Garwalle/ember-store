@@ -39,3 +39,24 @@ body {
 form {
     width: 40vh;
 }
+
+#notFound {
+    font-size: 10vh;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+figcaption {
+    background-color: black;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    font-size: 2vh;
+}
