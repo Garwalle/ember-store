@@ -1,12 +1,16 @@
 {{page-title "Dashboard"}}
-<h1>Dashboard</h1>
 
-<h3>Welcome {{@model.connected.firstname}}</h3>
+<div class="ui inverted segment">
+    <h1>Dashboard</h1>
+    <h3>Welcome {{@model.connected.firstname}}</h3>
+</div>
 
-<p>Your orders :</p>
-<ul>
-    {{#each @model.orders as |order|}}
-    <li>{{order.dateCreation}} {{order.status}}</li>
-    {{/each}}
-</ul>
-{{outlet}}
+<div class="ui inverted segment">
+    <p>Your orders :</p>
+    <ul>
+        {{#each @model.orders as |order|}}
+        <li>{{order.dateCreation}} {{order.status}}</li>
+        {{/each}}
+    </ul>
+    {{outlet}}
+</div>

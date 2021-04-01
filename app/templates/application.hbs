@@ -1,7 +1,7 @@
 <div class="ui inverted menu">
-  <a class="active item" href="http://127.0.0.1:4200/">Home</a>
-  <a class="item" href="http://127.0.0.1:4200/dashboard">Dashboard</a>
-  <a class="item" href="http://127.0.0.1:4200/store">Store</a>
+  <a class="item" href="/">Home</a>
+  <a class="item" href="/dashboard">Dashboard</a>
+  <a class="item" href="/store">Store</a>
 
   <div class="right menu">
     <div class="item">
@@ -10,15 +10,14 @@
       </div>
     </div>
     {{#if @model.connected}}
+    <a class="ui item">{{@model.connected.firstname}}</a>
     <a class="ui item" {{action "logout" }}>Logout</a>
     {{else}}
-    <a class="ui item">Login</a>
+    <a class="ui item" href="/">Login</a>
     {{/if}}
   </div>
 </div>
 
 <div class="ui inverted container">
-  <div class="ui inverted segment">
-    {{outlet}}
-  </div>
+  {{outlet}}
 </div>

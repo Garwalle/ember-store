@@ -1,22 +1,24 @@
 {{page-title "Home"}}
-<h1>Hi welcome to the Store project !</h1>
+<div class="ui inverted segment">
+  <h1>Hi welcome to the Store project !</h1>
 
-<p>Here you normally can :</p>
-<ul>
-  <li>Go through the store</li>
-  <li>prepare command online</li>
-  <li>tell us when you want to retreive your command(s)</li>
-</ul>
+  <p>Here you normally can :</p>
+  <ul>
+    <li>Go through the store</li>
+    <li>prepare command online</li>
+    <li>tell us when you want to retreive your command(s)</li>
+  </ul>
 
-<p>But this project is not for visitor but employees, log in if you are one !</p>
+  <p>But this project is not for visitor but employees, log in if you are one !</p>
 
-<form class="ui inline form" {{action "login" @model on="submit"}}>
-  <div class="field">
-    <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />
-  </div>
-  <div class="field">
-    <Input class="input" type="password" @value={{@model.password}} placeholder="Your password" required />
-  </div>
-  <button class="ui button" type="submit">Log in</button>
-</form>
+  <form class="ui inline form" {{action "login" @model on="submit" }}>
+    <div class="field">
+      <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />
+    </div>
+    <div class="field">
+      <Input class="input" type="password" @value={{@model.password}} placeholder="Your password" required />
+    </div>
+    <button class="ui button" type="submit">Log in</button>
+  </form>
+</div>
 {{outlet}}
