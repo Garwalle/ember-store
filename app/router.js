@@ -15,5 +15,10 @@ Router.map(function () {
     this.route('update', { path: 'update/:product_id' });
   });
   this.route('dashboard');
-  this.route('store');
+  this.route('store', function() {
+    this.route('sections', function() {
+      this.route('add');
+    });
+  });
+  this.route('notFound', { path: '/*path' });
 });
