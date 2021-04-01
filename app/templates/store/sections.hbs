@@ -1,0 +1,22 @@
+{{page-title "Store"}}
+
+<div id="dashboardTitleSegment" class="ui inverted segment">
+    <h1>Weclome to the store</h1>
+</div>
+
+<div class="ui inverted segment">
+    <h3>The sections :</h3>
+    <div id="dashboardSegments" class="ui segments">
+        <ul>
+            {{#each @model.sections as |section|}}
+            <li>{{section.name}}</li>
+            <ol>
+                {{#each section.products as |product|}}
+                <li>{{product.name}}</li>
+                {{/each}}
+            </ol>
+            {{/each}}
+        </ul>
+        {{outlet}}
+    </div>
+</div>

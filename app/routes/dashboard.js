@@ -3,7 +3,7 @@ import { action, set } from '@ember/object';
 import RSVP from 'rsvp';
 import AbstractRouteRoute from "./abstract-route";
 
-export default class UsersRoute extends AbstractRouteRoute {
+export default class DashboardRoute extends AbstractRouteRoute {
     model() {
         if (this.userAuth.user) {
             let employeeLogged = this.userAuth.user;
