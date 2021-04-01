@@ -11,7 +11,12 @@
             <p>Orders to prepare :</p>
             <ul>
                 {{#each @model.ordersCreated as |order|}}
-                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                <li><b>Creation :</b> {{order.dateCreation}}</li>
+                <ul>
+                    {{#each order.orderdetails as |orderdetail|}}
+                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
+                    {{/each}}
+                </ul>
                 {{/each}}
             </ul>
             {{outlet}}
@@ -20,7 +25,12 @@
             <p>Orders to deliver :</p>
             <ul>
                 {{#each @model.ordersPrepared as |order|}}
-                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                <li><b>Creation :</b> {{order.dateCreation}}</li>
+                <ul>
+                    {{#each order.orderdetails as |orderdetail|}}
+                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
+                    {{/each}}
+                </ul>
                 {{/each}}
             </ul>
             {{outlet}}
@@ -29,7 +39,12 @@
             <p>Orders completed :</p>
             <ul>
                 {{#each @model.ordersDelivered as |order|}}
-                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                <li><b>Creation :</b> {{order.dateCreation}}</li>
+                <ul>
+                    {{#each order.orderdetails as |orderdetail|}}
+                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
+                    {{/each}}
+                </ul>
                 {{/each}}
             </ul>
             {{outlet}}

@@ -11,8 +11,8 @@ export default class UsersRoute extends AbstractRouteRoute {
     });
   }
 
-  @action remove(user, model) {
+  /*@action remove(user, model) {
     set(model, 'deleted', user);
     user.destroyRecord().then(() => { });
-  }
+  }*/
 }
