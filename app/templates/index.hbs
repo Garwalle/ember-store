@@ -10,7 +10,7 @@
 
 <p>But this project is not for visitor but employees, log in if you are one !</p>
 
-<form class="ui inline form" {{action "login" @model on="submit" }}>
+<form class="ui inline form" {{action "login" @model on="submit"}}>
   <div class="field">
     <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />
   </div>
@@ -19,4 +19,5 @@
   </div>
   <button class="ui button" type="submit">Log in</button>
 </form>
+
 {{outlet}}

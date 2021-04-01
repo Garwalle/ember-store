@@ -1,7 +1,22 @@
 {{page-title "Store"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-{{!-- Feel free to remove this! --}}
-<div class="ui container">
-  {{outlet}}
+<div class="ui inverted menu">
+  <a class="active item" href="http://127.0.0.1:4200/">Home</a>
+  <a class="item" href="http://127.0.0.1:4200/dashboard">Dashboard</a>
+  <a class="item" href="http://127.0.0.1:4200/store">Store</a>
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search"><i class="search link icon"></i>
+      </div>
+    </div>
+    <a class="ui item" {{action "logout"}}>Logout</a>
+  </div>
+</div>
+
+<div class="ui inverted container">
+  <div class="ui inverted segment">
+    {{outlet}}
+  </div>
 </div>
