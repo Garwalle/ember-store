@@ -2,15 +2,37 @@
 
 <div class="ui inverted segment">
     <h1>Dashboard</h1>
-    <h3>Welcome {{@model.connected.firstname}}</h3>
+    <h2>Welcome {{@model.connected.firstname}}</h2>
 </div>
-
 <div class="ui inverted segment">
-    <p>Your orders :</p>
-    <ul>
-        {{#each @model.orders as |order|}}
-        <li>{{order.dateCreation}} {{order.status}}</li>
-        {{/each}}
-    </ul>
-    {{outlet}}
+    <h3>Your orders :</h3>
+    <div id="dashboardSegments" class="ui segments">
+        <div class="ui inverted segment">
+            <p>Orders to prepare :</p>
+            <ul>
+                {{#each @model.ordersCreated as |order|}}
+                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                {{/each}}
+            </ul>
+            {{outlet}}
+        </div>
+        <div class="ui inverted segment">
+            <p>Orders to deliver :</p>
+            <ul>
+                {{#each @model.ordersPrepared as |order|}}
+                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                {{/each}}
+            </ul>
+            {{outlet}}
+        </div>
+        <div class="ui inverted segment">
+            <p>Orders completed :</p>
+            <ul>
+                {{#each @model.ordersDelivered as |order|}}
+                <li><b>id :</b> {{order.id}}, <b>creation :</b> {{order.dateCreation}}</li>
+                {{/each}}
+            </ul>
+            {{outlet}}
+        </div>
+    </div>
 </div>

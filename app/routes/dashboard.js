@@ -9,7 +9,9 @@ export default class UsersRoute extends AbstractRouteRoute {
             let employeeLogged = this.userAuth.user;
             return RSVP.hash({
                 connected: employeeLogged,
-                orders: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'created' } }),
+                ordersCreated: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'created' } }),
+                ordersPrepared: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'prepared' } }),
+                ordersDelivered: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'delivered' } }),
             });
         }
     }

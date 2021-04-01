@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(63, 63, 63);
     color: white;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body {
 .ui.container {
     margin-top: 2vh;
     height: 90vh;
-    background-color: rgb(38, 38, 38);
+    background-color: rgb(49, 49, 49);
     padding: 1.2vh;
     border-radius: 1vh;
     
@@ -16,6 +16,14 @@ body {
 
 .ui.inverted.menu {
     margin: 0;
+}
+
+#dashboardSegments>.ui.inverted.segment {
+    border: white solid 0.2vh;
+}
+
+#dashboardSegments>div>p {
+    text-decoration: underline;
 }
 
 h1 {
