@@ -31,7 +31,7 @@ body {
     padding: 3vh;
 }
 
-h1 {
+#dashboardTitle {
     text-align: center;
     text-decoration: underline;
 }
