@@ -7,10 +7,11 @@ body {
 
 .ui.container {
     margin-top: 2vh;
-    height: 90vh;
+    height: 91vh;
     background-color: rgb(49, 49, 49);
     padding: 1.2vh;
     border-radius: 1vh;
+    overflow: auto;
     
 }
 

@@ -10,10 +10,10 @@
       </div>
     </div>
     {{#if @model.connected}}
-    <a class="ui item">{{@model.connected.firstname}}</a>
-    <a class="ui item" {{action "logout" }}>Logout</a>
+    <a class="ui item"><b>{{@model.connected.firstname}}</b></a>
+    <a class="ui red item" {{action "logout" }}><i class="power off icon"></i>Logout</a>
     {{else}}
-    <a class="ui item" href="/">Login</a>
+    <a class="ui item" href="/"><i class="user icon"></i>Login</a>
     {{/if}}
   </div>
 </div>
