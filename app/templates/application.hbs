@@ -1,5 +1,3 @@
-{{page-title "Store"}}
-
 <div class="ui inverted menu">
   <a class="active item" href="http://127.0.0.1:4200/">Home</a>
   <a class="item" href="http://127.0.0.1:4200/dashboard">Dashboard</a>
@@ -11,7 +9,11 @@
         <input type="text" placeholder="Search"><i class="search link icon"></i>
       </div>
     </div>
-    <a class="ui item" {{action "logout"}}>Logout</a>
+    {{#if @model.connected}}
+    <a class="ui item" {{action "logout" }}>Logout</a>
+    {{else}}
+    <a class="ui item">Login</a>
+    {{/if}}
   </div>
 </div>
 
