@@ -44,7 +44,7 @@ form {
     font-size: 10vh;
 }
 
-figure {
+#notFoundFigure {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -54,7 +54,7 @@ figure {
     align-items: center;
 }
 
-figcaption {
+#notFoundFigure>figcaption {
     background-color: black;
     padding: 0.5vh;
     border-radius: 0.5vh;

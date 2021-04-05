@@ -6,17 +6,15 @@
 
 <div class="ui inverted segment">
     <h3>The sections :</h3>
-    <div id="dashboardSegments" class="ui segments">
-        <ul>
-            {{#each @model.sections as |section|}}
-            <li>{{section.name}}</li>
-            <ol>
-                {{#each section.products as |product|}}
-                <li>{{product.name}}</li>
-                {{/each}}
-            </ol>
-            {{/each}}
-        </ul>
-        {{outlet}}
+    {{#each @model.sections as |section|}}
+    <div>
+        <p>{{section.name}}</p>
+        {{#each section.products as |product|}}
+        <figure>
+            <img src="/img/{{product.image}}.jpg" alt="Image {{product.image}}, of product {{product.name}}" height="200px" width="200px">
+            <figcaption>{{product.name}}</figcaption>
+        </figure>
+        {{/each}}
     </div>
+    {{/each}}
 </div>
