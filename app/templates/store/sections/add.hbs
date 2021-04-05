@@ -6,6 +6,7 @@
     <div class="field">
         <Input class="ui input" required="required" @value={{@model.description}} placeholder="Description" />
     </div>
+
     <button class="ui inverted green button" type="submit">Submit</button>
-    <LinkTo class="ui yellow green button" @route="store.sections" id="button">Cancel</LinkTo>
+    <LinkTo class="ui inverted yellow button" @route="store.sections" @activeClass="false" @tagName="button">Cancel</LinkTo>
 </form>
