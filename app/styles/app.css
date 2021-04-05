@@ -32,14 +32,35 @@ body {
     padding: 3vh;
 }
 
-#dashboardTitle {
+.title {
     text-align: center;
     text-decoration: underline;
 }
 
 .section {
+    border-radius: 0.5em;
+    background-color: rgba(255, 255, 255, 0.04);
+    margin: 3vh 1.5vh 0 1.5vh;
+}
+
+.section>h1 {
+    padding: 2vh 2vh 0 2vh;
+}
+
+.section>.sectionflexbox {
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sectionflexbox>figure:hover {
+    cursor: pointer;
+}
+
+.sectionflexbox>figure>img {
+    max-width: 300px;
 }
 
 form {

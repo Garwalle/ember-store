@@ -1,21 +1,22 @@
 {{page-title "Store"}}
 
 <div id="dashboardTitleSegment" class="ui inverted segment">
-    <h1>Weclome to the store</h1>
+    <h1 class="title">Weclome to the store</h1>
 </div>
 
 <div class="ui inverted segment">
-    <h3>The sections :</h3>
+    <h2><u>Sections :</u></h2>
     {{#each @model.sections as |section|}}
-    <h2>{{section.name}}</h2>
     <div class="section">
-    {{#each section.products as |product|}}
-    <figure>
-        <img src="/img/{{product.image}}.jpg" alt="Image {{product.image}}, of product {{product.name}}" height="200px"
-            width="200px">
-        <figcaption>{{product.name}}</figcaption>
-    </figure>
+        <h1>{{section.name}}</h1>
+        <div class="sectionflexbox">
+            {{#each section.products as |product|}}
+            <figure>
+                <img src="/img/{{product.image}}.jpg" alt="Image {{product.image}}, of product {{product.name}}">
+                <figcaption>{{product.name}}</figcaption>
+            </figure>
+            {{/each}}
+        </div>
+    </div>
     {{/each}}
-</div>
-{{/each}}
 </div>
