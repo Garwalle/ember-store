@@ -53,7 +53,7 @@ body {
 
 #sectionTitle>h1 {
     font-size: 4vh;
-    margin: 0 1vh 1vh 0;
+    margin: 0 1vh 0.8vh 0;
 }
 
 .sectionHeader {
@@ -77,6 +77,25 @@ body {
 
 .sectionBody>figure>img {
     max-width: 300px;
+}
+
+#sectionAdd {
+    margin: auto;
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectionAdd>div {
+    width: 100%;
+}
+
+#sectionAdd>button, #sectionAdd>#button {
+    width: 10vh;
+    margin-bottom: 1vh;
 }
 
 form {
