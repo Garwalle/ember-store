@@ -12,6 +12,7 @@ body {
     padding: 1.2vh;
     border-radius: 1vh;
     overflow: auto;
+    width: 80%;
     
 }
 
@@ -34,6 +35,11 @@ body {
 #dashboardTitle {
     text-align: center;
     text-decoration: underline;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 form {
