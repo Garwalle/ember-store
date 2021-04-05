@@ -18,6 +18,7 @@ Router.map(function () {
   this.route('store', function() {
     this.route('sections', function() {
       this.route('add');
+      this.route('delete', { path: 'delete/:section_id' });
     });
   });
   this.route('notFound', { path: '/*path' });
