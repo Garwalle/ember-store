@@ -5,7 +5,11 @@
 <div class="ui inverted segment">
     <div id="sectionTitle">
         <h1>Sections</h1>
+        <LinkTo class="ui tiny green icon button" @route="store.sections.add"><i class="plus icon"></i></LinkTo>
     </div>
+
+    {{outlet}}
+
     {{#each @model.sections as |section|}}
     <div class="section">
         <div class="sectionHeader">

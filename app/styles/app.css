@@ -13,7 +13,6 @@ body {
     border-radius: 1vh;
     overflow: auto;
     width: 80%;
-    
 }
 
 .ui.inverted.menu {
@@ -44,8 +43,17 @@ body {
     margin: 3vh 1.5vh 0 1.5vh;
 }
 
-#sectionTitle>h1{
-    text-decoration: underline;
+#sectionTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2vh;
+}
+
+#sectionTitle>h1 {
+    font-size: 4vh;
+    margin: 0 1vh 1vh 0;
 }
 
 .sectionHeader {
