@@ -17,8 +17,10 @@
             <h1>{{section.name}}</h1>
             <div class="ui inverted buttons">
                 <button class="ui inverted green button"><i class="icon plus"></i>Add product</button>
-                <button class="ui inverted blue button"><i class="icon pencil alternate"></i>Edit</button>
-                <LinkTo class="ui inverted red button" @route="store.sections.delete" @model={{section.id}} @tagName="button"><i class="icon trash"></i>Delete</LinkTo>
+                <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}}
+                    {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename</LinkTo>
+                <LinkTo class="ui inverted red button" @route="store.sections.delete" @model={{section.id}}
+                    @tagName="button"><i class="icon trash"></i>Delete</LinkTo>
             </div>
         </div>
         <div class="sectionBody">

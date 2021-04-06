@@ -22,4 +22,9 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
             this.transitionTo('store.sections.index');
         }
     }
+
+    @action scrollToTitle() {
+        var element = document.getElementById("sectionTitle");
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
 }

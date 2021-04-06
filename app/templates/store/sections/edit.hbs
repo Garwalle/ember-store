@@ -1,0 +1,8 @@
+<form id="sectionNestedRoute" class="ui inverted form" {{ action "rename" @model on="submit" }}>
+    <div class="field">
+        <h3>Rename a section :</h3>
+        <Input class="ui input" required="required" @value={{@model.section.newName}} placeholder={{@model.section.name}} />
+    </div>
+    <button class="ui inverted green button" type="submit">Rename</button>
+    <LinkTo class="ui inverted orange button" @route="store.sections" @activeClass="false" @tagName="button">Cancel</LinkTo>
+</form>

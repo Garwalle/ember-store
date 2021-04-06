@@ -19,6 +19,7 @@ Router.map(function () {
     this.route('sections', function() {
       this.route('add');
       this.route('delete', { path: 'delete/:section_id' });
+      this.route('edit', { path: 'edit/:section_id' });
     });
   });
   this.route('notFound', { path: '/*path' });
