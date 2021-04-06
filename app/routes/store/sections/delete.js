@@ -5,13 +5,13 @@ import { action } from '@ember/object';
 export default class StoreSectionsDeleteRoute extends Route {
     model(params) {
         return RSVP.hash({
-            section: this.store.findRecord('sections', params.section_id),
+            section: this.store.findRecord('section', params.section_id, { reload: true }),
         });
     }
 
-    @action delete(section) {
-        section.deleteRecord();
-        section.save().then(() => {
+    afterModel(model) {
+        model.section.deleteRecord();
+        model.section.save().then(() => {
             this.transitionTo('store.sections');
         });
     }

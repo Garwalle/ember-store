@@ -13,4 +13,13 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
             });
         }
     }
+
+    @action showAddForm() {
+        if (Ember.getOwner(this).lookup('controller:application').currentPath === 'store.sections.index') {
+            this.transitionTo('store.sections.add');
+        }
+        else {
+            this.transitionTo('store.sections.index');
+        }
+    }
 }
