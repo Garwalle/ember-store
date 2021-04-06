@@ -5,8 +5,15 @@
 <div class="ui inverted segment">
     <div id="sectionTitle">
         <h1>Sections</h1>
-        <button class="ui inverted active tiny green icon button" {{action "showAddForm" }}><i
-                class="plus icon"></i></button>
+        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
+    </div>
+
+    <div id="deleteMessage" class="ui negative message">
+        <i class="close icon" {{action "closeMessage"}}></i>
+        <div class="header">Are you sure ?</div>
+        <p>If you delete that section, you will also delete all the products related to it, are you sure you want to delete ?</p>
+        <button>Yes</button>
+        <button>Cancel</button>
     </div>
 
     {{outlet}}
@@ -33,4 +40,5 @@
         </div>
     </div>
     {{/each}}
+
 </div>
