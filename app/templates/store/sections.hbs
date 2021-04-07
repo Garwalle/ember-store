@@ -9,15 +9,15 @@
             }}><i class="plus icon"></i></LinkTo>
     </div>
 
-
-    <button {{action "showUiModal" }}>Show ui modal</button>
+    <button {{ action "showUiModal" }}>Show ui modal</button>
 
     <div class="ui tiny modal" style="color: black;">
         <div class="header">Delete the section ?</div>
         <div class="content">If you delete it, all the products related to it will be also be remove.</div>
         <div class="actions">
             <div class="ui blue deny button">Cancel</div>
-            <LinkTo class="ui red deny right labeled icon button" @route="index">Delete<i class="trash icon"></i></LinkTo>
+            <LinkTo class="ui red deny right labeled icon button" @route="index">Delete<i class="trash icon"></i>
+            </LinkTo>
         </div>
     </div>
 
@@ -30,17 +30,25 @@
             <div class="ui inverted buttons">
                 <button class="ui inverted green button"><i class="icon plus"></i>Add product</button>
                 <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}}
-                    {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename</LinkTo>
+                    {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename
+                </LinkTo>
                 <LinkTo class="ui inverted red button" @route="store.sections.delete" @model={{section.id}}
                     @tagName="button"><i class="icon trash"></i>Delete</LinkTo>
             </div>
         </div>
-        <div class="sectionBody">
+        <div id="cards" class="ui cards">
             {{#each section.products as |product|}}
-            <figure>
-                <img src="/img/{{product.image}}.jpg" alt="Image {{product.image}}, of product {{product.name}}">
-                <figcaption>{{product.name}}</figcaption>
-            </figure>
+            <div class="ui centered card">
+                <div class="image"><img src="/img/{{product.image}}.jpg"></div>
+                <div class="content">
+                    <div class="header">{{product.name}}</div>
+                    <div class="meta">{{product.price}} €</div>
+                </div>
+                <div class="extra content">
+                    <LinkTo @route="store.sections" class="ui basic blue button">Edit</LinkTo>
+                    <LinkTo @route="store.sections" class="ui basic red button">Remove</LinkTo>
+                </div>
+            </div>
             {{/each}}
         </div>
     </div>

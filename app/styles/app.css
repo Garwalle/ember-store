@@ -6,13 +6,13 @@ body {
 }
 
 .ui.container {
-    margin-top: 1vh;
+    margin-top: 1.2vh;
     height: 93vh;
     background-color: rgb(49, 49, 49);
     padding: 1.2vh;
     border-radius: 1vh;
     overflow: auto;
-    width: 80%;
+    width: 85%;
 }
 
 .ui.inverted.menu {
@@ -63,22 +63,6 @@ body {
     padding: 2vh;
 }
 
-.sectionBody {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.sectionBody>figure:hover {
-    cursor: pointer;
-}
-
-.sectionBody>figure>img {
-    max-width: 300px;
-}
-
 #sectionNestedRoute {
     margin: auto;
     margin-top: 3vh;
@@ -96,6 +80,18 @@ body {
 #sectionNestedRoute>button, #sectionNestedRoute>#button {
     width: 10vh;
     margin-bottom: 1vh;
+}
+
+#cards {
+    margin: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.extra.content {
+    border-top: 1px solid rgba(0, 0, 0, 0.15) !important;
+    background-color: violet;
+    padding: 10vh;
 }
 
 form {
