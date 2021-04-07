@@ -8,12 +8,17 @@
         <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
     </div>
 
-    <div id="deleteMessage" class="ui negative message">
-        <i class="close icon" {{action "closeMessage"}}></i>
-        <div class="header">Are you sure ?</div>
-        <p>If you delete that section, you will also delete all the products related to it, are you sure you want to delete ?</p>
-        <button>Yes</button>
-        <button>Cancel</button>
+
+    <button {{action "deleteSection"}}>Show message</button>
+
+    <div id="sectionDeleteMessage"{{action "closeMessage"}}>
+        <div  class="ui negative message">
+            <i class="close icon" {{action "closeMessage"}}></i>
+            <div class="header">Are you sure ?</div>
+            <p>If you delete that section, you will also delete all the products related to it !</p>
+            <button class="ui red button"><i class="icon trash"></i>Delete</button>
+            <button class="ui blue button">Cancel</button>
+        </div>
     </div>
 
     {{outlet}}

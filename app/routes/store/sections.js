@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import { action, set } from '@ember/object';
 import RSVP from 'rsvp';
 import AbstractRouteRoute from "../abstract-route";
+import $ from 'jquery';
 
 export default class StoreSectionRoute extends AbstractRouteRoute {
     model() {
@@ -14,8 +15,12 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
         }
     }
 
+    @action deleteSection() {
+        $("#sectionDeleteMessage").fadeIn();
+    }
+
     @action closeMessage() {
-        document.getElementById("deleteMessage").style.display = "none";
+        $("#sectionDeleteMessage").fadeOut();
     }
 
     @action scrollToTitle() {
