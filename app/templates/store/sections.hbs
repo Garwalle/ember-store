@@ -10,14 +10,14 @@
     </div>
 
 
-    <button {{action "showUiModal" }}>Show message</button>
+    <button {{action "showUiModal" }}>Show ui modal</button>
 
     <div class="ui tiny modal" style="color: black;">
         <div class="header">Delete the section ?</div>
         <div class="content">If you delete it, all the products related to it will be also be remove.</div>
         <div class="actions">
-            <div class="ui blue button">Cancel</div>
-            <div class="ui red right labeled icon button">Delete<i class="trash icon"></i></div>
+            <div class="ui blue deny button">Cancel</div>
+            <LinkTo class="ui red deny right labeled icon button" @route="index">Delete<i class="trash icon"></i></LinkTo>
         </div>
     </div>
 
