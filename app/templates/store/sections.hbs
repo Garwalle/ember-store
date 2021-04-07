@@ -5,19 +5,19 @@
 <div class="ui inverted segment">
     <div id="sectionTitle">
         <h1>Sections</h1>
-        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
+        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"
+            }}><i class="plus icon"></i></LinkTo>
     </div>
 
 
-    <button {{action "deleteSection"}}>Show message</button>
+    <button {{action "showUiModal" }}>Show message</button>
 
-    <div id="sectionDeleteMessage"{{action "closeMessage"}}>
-        <div  class="ui negative message">
-            <i class="close icon" {{action "closeMessage"}}></i>
-            <div class="header">Are you sure ?</div>
-            <p>If you delete that section, you will also delete all the products related to it !</p>
-            <button class="ui red button"><i class="icon trash"></i>Delete</button>
-            <button class="ui blue button">Cancel</button>
+    <div class="ui tiny modal" style="color: black;">
+        <div class="header">Delete the section ?</div>
+        <div class="content">If you delete it, all the products related to it will be also be remove.</div>
+        <div class="actions">
+            <div class="ui blue button">Cancel</div>
+            <div class="ui red right labeled icon button">Delete<i class="trash icon"></i></div>
         </div>
     </div>
 

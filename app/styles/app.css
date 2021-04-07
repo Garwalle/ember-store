@@ -79,30 +79,6 @@ body {
     max-width: 300px;
 }
 
-#sectionDeleteMessage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 1.9vh;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: none;
-}
-
-#sectionDeleteMessage>div {
-    margin: auto;
-    margin-top: -7vh;
-    top: 50%;
-    width: 60vh;
-    height: 14vh;
-}
-
-#sectionDeleteMessage>div>p {
-    font-size: 1.6vh;
-}
-
 #sectionNestedRoute {
     margin: auto;
     margin-top: 3vh;

@@ -15,12 +15,8 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
         }
     }
 
-    @action deleteSection() {
-        $("#sectionDeleteMessage").fadeIn();
-    }
-
-    @action closeMessage() {
-        $("#sectionDeleteMessage").fadeOut();
+    @action showUiModal() {
+        $('.tiny.modal').modal('show');
     }
 
     @action scrollToTitle() {
