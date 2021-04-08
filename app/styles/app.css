@@ -88,12 +88,6 @@ body {
     padding-left: 4px;
 }
 
-.extra.content {
-    border-top: 1px solid rgba(0, 0, 0, 0.15) !important;
-    background-color: violet;
-    padding: 10vh;
-}
-
 form {
     width: 40vh;
 }
