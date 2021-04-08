@@ -14,12 +14,7 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
             });
         }
     }
-
-    @action showUiModal() {
-        $('.tiny.modal').modal('show');
-        // Demander de l'aide au prof pour comment récuperer l'id de la section et la sauvegarder dans un model (ou autre), afin que le linkTo du ui modal la récupère !
-    }
-
+    
     @action scrollToTitle() {
         var element = document.getElementById("sectionTitle");
         element.scrollIntoView({ behavior: 'smooth' });

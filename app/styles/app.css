@@ -88,6 +88,12 @@ body {
     padding-left: 4px;
 }
 
+/*
+.extra.content {
+    border: 3px solid blue !important;
+}
+*/
+
 form {
     width: 40vh;
 }

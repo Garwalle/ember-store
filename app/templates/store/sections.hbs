@@ -5,19 +5,15 @@
 <div class="ui inverted segment">
     <div id="sectionTitle">
         <h1>Sections</h1>
-        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"
-            }}><i class="plus icon"></i></LinkTo>
+        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
     </div>
-
-    <button {{ action "showUiModal" }}>Show ui modal</button>
 
     <div class="ui tiny modal" style="color: black;">
         <div class="header">Delete the section ?</div>
         <div class="content">If you delete it, all the products related to it will be also be remove.</div>
         <div class="actions">
             <div class="ui blue deny button">Cancel</div>
-            <LinkTo class="ui red deny right labeled icon button" @route="index">Delete<i class="trash icon"></i>
-            </LinkTo>
+            <LinkTo class="ui red deny right labeled icon button" @route="store.sections.delete" @model={{this.sectionId}}>Delete<i class="trash icon"></i></LinkTo>
         </div>
     </div>
 
@@ -30,10 +26,9 @@
             <div class="ui inverted buttons">
                 <button class="ui inverted green button"><i class="icon plus"></i>Add product</button>
                 <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}}
-                    {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename
+                    {{action "scrollToTitle"}} @tagName="button"><i class="icon pencil alternate"></i>Rename
                 </LinkTo>
-                <LinkTo class="ui inverted red button" @route="store.sections.delete" @model={{section.id}}
-                    @tagName="button"><i class="icon trash"></i>Delete</LinkTo>
+                <button class="ui inverted red button" {{action "showUiModal" section.id}}><i class="icon trash"></i>Delete</button>
             </div>
         </div>
         <div id="cards" class="ui cards">
