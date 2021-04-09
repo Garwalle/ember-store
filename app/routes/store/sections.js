@@ -1,8 +1,7 @@
-import Route from '@ember/routing/route';
-import { action, set } from '@ember/object';
-import RSVP from 'rsvp';
 import AbstractRouteRoute from "../abstract-route";
-import $ from 'jquery';
+import { action } from '@ember/object';
+import RSVP from 'rsvp';
+
 
 export default class StoreSectionRoute extends AbstractRouteRoute {
     model() {

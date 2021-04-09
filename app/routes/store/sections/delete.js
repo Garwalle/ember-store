@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
-import { tracked } from '@glimmer/tracking';
 
 export default class StoreSectionsDeleteRoute extends Route {
     renderTemplate(){
