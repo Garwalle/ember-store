@@ -23,14 +23,11 @@
     {{#each @model.sections as |section|}}
     <div class="section">
         <div class="sectionHeader">
-            <div><h1>{{section.name}}</h1><div id="{{this.sectionId}}" style="display: none;" class="ui active inline loader"></div></div>
+            <div><h1>{{section.name}}</h1><div id="loading{{section.id}}" style="display: none;">{{outlet "loading"}}</div></div>
             <div class="ui inverted buttons">
-                <button class="ui inverted green button"><i class="icon plus"></i>Add product</button>
-                <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}}
-                    {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename
-                </LinkTo>
-                <button class="ui inverted red button" {{action "showUiModal" section.id}}><i
-                        class="icon trash"></i>Delete</button>
+                <LinkTo class="ui inverted green button" @route="store.sections.addProduct" @model={{section.id}} @tagName="button"><i class="icon plus"></i>Add product</LinkTo>
+                <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}} {{action "scrollToTitle"}} @tagName="button"><i class="icon pencil alternate"></i>Rename</LinkTo>
+                <button class="ui inverted red button" {{action "showUiModal" section.id}}><i class="icon trash"></i>Delete</button>
             </div>
         </div>
         <div id="cards" class="ui cards">

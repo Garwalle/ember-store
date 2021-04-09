@@ -14,9 +14,8 @@ export default class StoreSectionRoute extends AbstractRouteRoute {
             });
         }
     }
-    
+
     @action scrollToTitle() {
-        var element = document.getElementById("sectionTitle");
-        element.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById("sectionTitle").scrollIntoView({ behavior: 'smooth' });
     }
 }
