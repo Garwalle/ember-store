@@ -8,13 +8,12 @@
         <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
     </div>
 
-    <div class="ui tiny modal" style="color: black;">
+    <div id="deleteModal" class="ui tiny modal" style="color: black;">
         <div class="header">Delete the section ?</div>
         <div class="content">If you delete it, the <b>{{this.nbProduct}}</b> products related to it will be also be remove.</div>
         <div class="actions">
             <div class="ui blue deny button">Cancel</div>
-            <LinkTo class="ui red deny right labeled icon button" @route="store.sections.delete"
-                @model={{this.sectionId}}>Delete<i class="trash icon"></i></LinkTo>
+            <LinkTo class="ui red deny right labeled icon button" @route="store.sections.delete" @model={{this.sectionId}}>Delete<i class="trash icon"></i></LinkTo>
         </div>
     </div>
 
@@ -32,6 +31,7 @@
         </div>
         <div id="cards" class="ui cards">
             {{#each section.products as |product|}}
+            {{#if product.comments}}
             <div class="ui centered card">
                 <div class="image"><img src="/img/{{product.image}}.jpg"></div>
                 <div class="content">
@@ -40,12 +40,12 @@
                 </div>
                 <div class="extra content">
                     <LinkTo @route="store.sections" class="ui basic blue button">Edit</LinkTo>
-                    <LinkTo @route="store.sections" class="ui basic red button">Remove</LinkTo>
+                    <LinkTo class="ui basic red button" @route="store.sections.deleteProduct" @model={{product.id}} {{action "showModal" "#deleteProductModal"}}>Remove</LinkTo>
                 </div>
             </div>
+            {{/if}}
             {{/each}}
         </div>
     </div>
     {{/each}}
-
 </div>

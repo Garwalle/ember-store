@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import RSVP from 'rsvp';
 
-export default class StoreSectionsAddRoute extends Route {
+export default class StoreSectionsAddProductRoute extends Route {
     @tracked sectionId;
 
     model(params) {

@@ -9,6 +9,11 @@ export default class StoreSectionsController extends Controller {
     @action showUiModal(section) {
         this.sectionId = section.id;
         this.nbProduct = section.products.length;
-        $('.tiny.modal').modal('show');
+        section.products.forEach(element => console.log(element.packs));
+        $('#deleteModal').modal('show');
+    }
+
+    @action showModal(modal) {
+        $(modal).modal('show');
     }
 }
