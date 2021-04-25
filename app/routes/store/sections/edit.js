@@ -11,7 +11,7 @@ export default class StoreSectionsEditRoute extends Route {
 
     @action rename(model) {
         this.store.findRecord('section', model.section.id).then(function (section) {
-            section.name = model.section.newName;
+            section.name = model.section.name;
             section.save();
         });
         this.transitionTo('store.sections')

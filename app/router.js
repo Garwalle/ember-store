@@ -22,6 +22,7 @@ Router.map(function () {
       this.route('edit', { path: 'edit/:section_id' });
       this.route('addProduct', { path: 'addProduct/:section_id' });
       this.route('deleteProduct', { path: 'deleteProduct/:product_id' });
+      this.route('editProduct', { path: 'editProduct/:product_id' });
     });
   });
   this.route('notFound', { path: '/*path' });

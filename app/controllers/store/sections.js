@@ -12,8 +12,4 @@ export default class StoreSectionsController extends Controller {
         section.products.forEach(element => console.log(element.packs));
         $('#deleteModal').modal('show');
     }
-
-    @action showModal(modal) {
-        $(modal).modal('show');
-    }
 }

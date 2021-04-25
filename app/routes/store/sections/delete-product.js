@@ -9,6 +9,12 @@ export default class StoreSectionsDeleteProductRoute extends Route {
         });
     }
 
+    @action didTransition() {
+        $('#deleteProductModal').modal('show');
+        console.log($('#deleteProductModal').length);
+        debugger;
+    }
+
     @action delete(product) {
         product.destroyRecord().then(
             this.transitionTo('store.sections') //quand j'enlève le transition ça ne met pas d'error

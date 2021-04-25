@@ -8,6 +8,7 @@
         <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
     </div>
 
+    <!-- To put in route store.sections.delete if i manage to show modal form route js-->
     <div id="deleteModal" class="ui tiny modal" style="color: black;">
         <div class="header">Delete the section ?</div>
         <div class="content">If you delete it, the <b>{{this.nbProduct}}</b> products related to it will be also be remove.</div>
@@ -39,8 +40,8 @@
                     <div class="meta">{{product.price}} €</div>
                 </div>
                 <div class="extra content">
-                    <LinkTo @route="store.sections" class="ui basic blue button">Edit</LinkTo>
-                    <LinkTo class="ui basic red button" @route="store.sections.deleteProduct" @model={{product.id}} {{action "showModal" "#deleteProductModal"}}>Remove</LinkTo>
+                    <LinkTo class="ui basic blue button" @route="store.sections.editProduct" @model={{product.id}} {{action "scrollToTitle"}}>Edit</LinkTo>
+                    <LinkTo class="ui basic red button" @route="store.sections.deleteProduct" @model={{product.id}}>Remove</LinkTo>
                 </div>
             </div>
             {{/if}}
