@@ -1,14 +1,12 @@
 {{page-title "Add"}}
-<form class="ui form" {{action "save" @model.product on="submit"}}>
-  <Input @value={{@model.product.name}} placeholder="Nom du produit"/>
+<form class="ui form" {{action "save" @model.product on="submit" }}>
+  <Input @value={{@model.product.name}} placeholder="Nom du produit" />
   <UiDropdown class="selection multiple" @selected={{@model.product.packs}} @onChange={{fn (mut @model.product.packs)}} as |execute mapper|>
     <div class="default text">Packs</div>
     <i class="dropdown icon"></i>
     <div class="menu">
       {{#each @model.products as |product|}}
-        <div data-value="{{map-value mapper product}}" class="item">
-          {{product.name}}
-        </div>
+      <div data-value="{{map-value mapper product}}" class="item">{{product.name}}</div>
       {{/each}}
     </div>
   </UiDropdown>
@@ -18,12 +16,11 @@
     <i class="dropdown icon"></i>
     <div class="menu">
       {{#each @model.sections as |section|}}
-        <div data-value="{{map-value mapper section}}" class="item">
-          {{section.name}}
-        </div>
+      <div data-value="{{map-value mapper section}}" class="item">{{section.name}}</div>
       {{/each}}
     </div>
   </UiDropdown>
-<button type="submit" class="ui positive button">Valider</button>
+  
+  <button type="submit" class="ui positive button">Valider</button>
 </form>
 {{outlet}}

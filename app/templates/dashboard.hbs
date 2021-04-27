@@ -4,50 +4,30 @@
     <h1 class="title">Dashboard</h1>
 </div>
 
-<div class="ui inverted segment">
-    <h3>Your orders :</h3>
-    <div id="dashboardSegments" class="ui segments">
-        <div class="ui inverted segment">
-            <p>Orders to prepare :</p>
-            <ul>
-                {{#each @model.ordersCreated as |order|}}
-                <li><b>Creation :</b> {{order.dateCreation}}</li>
-                <ul>
-                    {{#each order.orderdetails as |orderdetail|}}
-                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
-                    {{/each}}
-                </ul>
-                {{/each}}
-            </ul>
-            {{outlet}}
+<div id="dhbWelcome" class="ui inverted segment">
+    <div>
+        <h2>Hi {{@model.connected.firstname}}</h2>
+        <p>You have <b>{{@model.orders.length}}</b> order(s) left to prepare !</p>
+    </div>
+    <img id="dhbAvatar" src="/img/{{@model.connected.firstname}}.png">
+</div>
+
+<div id="dhbOrders" class="ui inverted segment">
+    <h2>Orders to prepare :</h2>
+    <div class="ui centered cards">
+        {{#each @model.orders as |order|}}
+        <div class="card">
+            <div class="content">
+                <div class="header">Order : {{order.id}}</div>
+                <div class="meta">{{order.amount}} $</div>
+                <div class="description">
+                    <b>Creation :</b> {{order.dateCreation}}<br>
+                    <b>Expiration :</b>
+                </div>
+            </div>
         </div>
-        <div class="ui inverted segment">
-            <p>Orders to deliver :</p>
-            <ul>
-                {{#each @model.ordersPrepared as |order|}}
-                <li><b>Creation :</b> {{order.dateCreation}}</li>
-                <ul>
-                    {{#each order.orderdetails as |orderdetail|}}
-                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
-                    {{/each}}
-                </ul>
-                {{/each}}
-            </ul>
-            {{outlet}}
-        </div>
-        <div class="ui inverted segment">
-            <p>Orders completed :</p>
-            <ul>
-                {{#each @model.ordersDelivered as |order|}}
-                <li><b>Creation :</b> {{order.dateCreation}}</li>
-                <ul>
-                    {{#each order.orderdetails as |orderdetail|}}
-                    <li><b>Quantity :</b> {{orderdetail.quantity}}</li>
-                    {{/each}}
-                </ul>
-                {{/each}}
-            </ul>
-            {{outlet}}
-        </div>
+        {{/each}}
     </div>
 </div>
+
+{{outlet}}

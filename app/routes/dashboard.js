@@ -9,9 +9,7 @@ export default class DashboardRoute extends AbstractRouteRoute {
             let employeeLogged = this.userAuth.user;
             return RSVP.hash({
                 connected: employeeLogged,
-                ordersCreated: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'created' }, include: 'orderdetails' }),
-                ordersPrepared: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'prepared' }, include: 'orderdetails' }),
-                ordersDelivered: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'delivered' }, include: 'orderdetails' }),
+                orders: this.store.query('order', { filter: { idEmployee: employeeLogged.id, status: 'created' }, include: 'orderdetails' }),
             });
         }
     }

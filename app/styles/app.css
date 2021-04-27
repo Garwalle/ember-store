@@ -100,12 +100,6 @@ body {
     padding-left: 4px;
 }
 
-/*
-.extra.content {
-    border: 3px solid blue !important;
-}
-*/
-
 form {
     width: 40vh;
 }
@@ -129,4 +123,23 @@ form {
     padding: 0.5vh;
     border-radius: 0.5vh;
     font-size: 2vh;
+}
+
+#dhbWelcome {
+    display: flex;
+    justify-content: space-between;
+}
+
+#dhbWelcome>p {
+    font-size: 1.6vh;
+}
+
+#dhbOrders>h2 {
+    text-decoration: underline;
+    margin-bottom: 3vh;
+}
+
+#dhbAvatar {
+    width: 20vh;
+    height: 20vh;
 }

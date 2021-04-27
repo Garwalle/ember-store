@@ -13,15 +13,15 @@ export default class StoreSectionsAddProductRoute extends Route {
         });
     }
 
-    @action add(sectionDATA) {
+    @action add(model) {
         let section = this.store.peekRecord('section', this.sectionId);
         let product = this.store.createRecord('product', {
-            name: sectionDATA.name,
-            comments: sectionDATA.comments,
-            stock: sectionDATA.stock,
-            image: sectionDATA.image,
-            price: sectionDATA.price,
-            promotion: sectionDATA.promotion,
+            name: model.name,
+            comments: model.comments,
+            stock: model.stock,
+            image: model.image,
+            price: model.price,
+            promotion: model.promotion,
             section: section
         });
         
