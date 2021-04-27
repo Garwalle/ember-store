@@ -8,13 +8,12 @@
         <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
     </div>
 
-    <!-- To put in route store.sections.delete if i manage to show modal form route js-->
-    <div id="deleteModal" class="ui tiny modal" style="color: black;">
-        <div class="header">Delete the section ?</div>
-        <div class="content">If you delete it, the <b>{{this.nbProduct}}</b> products related to it will be also be remove.</div>
+    <div class="ui tiny modal" style="color: black;">
+        <div class="header">{{this.modalTitle}}</div>
+        <div class="content">{{this.modalDesc}}</div>
         <div class="actions">
-            <div class="ui blue deny button">Cancel</div>
-            <LinkTo class="ui red deny right labeled icon button" @route="store.sections.delete" @model={{this.sectionId}}>Delete<i class="trash icon"></i></LinkTo>
+            <div class="ui blue deny button">No</div>
+            <LinkTo class="ui red deny right labeled icon button" @route={{this.modalRoute}} @model={{this.modalId}}>Yes<i class="trash icon"></i></LinkTo>
         </div>
     </div>
 
@@ -27,7 +26,7 @@
             <div class="ui inverted buttons">
                 <LinkTo class="ui inverted green button" @route="store.sections.addProduct" @model={{section.id}} @tagName="button"><i class="icon plus"></i>Add product</LinkTo>
                 <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}} {{action "scrollToTitle"}} @tagName="button"><i class="icon pencil alternate"></i>Rename</LinkTo>
-                <button class="ui inverted red button" {{action "showUiModal" section}}><i class="icon trash"></i>Delete</button>
+                <button class="ui inverted red button" {{action "deleteModal" section}}><i class="icon trash"></i>Delete</button>
             </div>
         </div>
         <div id="cards" class="ui cards">
@@ -41,7 +40,7 @@
                 </div>
                 <div class="extra content">
                     <LinkTo class="ui basic blue button" @route="store.sections.editProduct" @model={{product.id}} {{action "scrollToTitle"}}>Edit</LinkTo>
-                    <LinkTo class="ui basic red button" @route="store.sections.deleteProduct" @model={{product.id}}>Remove</LinkTo>
+                    <button class="ui basic red button" {{action "deleteProductModal" product}}>Remove</button>
                 </div>
             </div>
             {{/if}}

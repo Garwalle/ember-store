@@ -2,8 +2,8 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default class StoreSectionsDeleteRoute extends Route {
-    renderTemplate(){
-        this.render({outlet: 'loading'});
+    renderTemplate() {
+        this.render({ outlet: 'loading' });
     }
 
     model(params) {
@@ -15,8 +15,7 @@ export default class StoreSectionsDeleteRoute extends Route {
     afterModel(model) {
         this.deleteProducts(model.section.products, model.section.id).then(() => {
             model.section.destroyRecord().then(
-                this.transitionTo('store.sections')
-            );
+                this.transitionTo('store.sections'));
         });
     }
 

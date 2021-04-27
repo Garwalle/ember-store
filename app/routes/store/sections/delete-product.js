@@ -9,13 +9,7 @@ export default class StoreSectionsDeleteProductRoute extends Route {
         });
     }
 
-    @action didTransition() {
-        jQuery(function() {
-            $('#deleteProductModal').modal('show');
-        })
-    }
-
-    @action delete(product) {
-        product.destroyRecord();
+    afterModel(model) {
+        model.product.destroyRecord().then(this.transitionTo('store.sections'));
     }
 }
