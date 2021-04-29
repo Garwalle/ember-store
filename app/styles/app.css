@@ -31,10 +31,32 @@ body {
     padding: 3vh;
 }
 
-.title {
-    text-align: center;
+#titleSection {
+    display: flex;
+    justify-content: center;
+}
+
+#titleSection>h1 {
     text-decoration: underline;
     font-size: 5vh;
+    background-color: rgb(59,175,71,255);
+    border-radius: 2vh;
+    padding: 1vh 5vh 1vh 5vh;
+    box-shadow: 8px 8px 5px 0.5px rgba(255, 255, 255, 0.13);
+}
+
+#titleDhb {
+    display: flex;
+    justify-content: center;
+}
+
+#titleDhb>h1 {
+    text-decoration: underline;
+    font-size: 5vh;
+    background-color: rgb(244,22,28,255);
+    border-radius: 2vh;
+    padding: 1vh 5vh 1vh 5vh;
+    box-shadow: 8px 8px 5px 0.5px rgba(255, 255, 255, 0.13);
 }
 
 .section {
