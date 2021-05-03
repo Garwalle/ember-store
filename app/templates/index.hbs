@@ -1,15 +1,10 @@
 {{page-title "Home"}}
 <div class="ui inverted segment">
   <h1>Welcome to the Store project !</h1>
-
-  <p>Here you normally can :</p>
-  <ul>
-    <li>Go through the store</li>
-    <li>prepare command online</li>
-    <li>tell us when you want to retreive your command(s)</li>
-  </ul>
-
-  <p>But this project is not for visitor but employees, log in if you are one !</p>
+  {{#if @model.connected}}
+  <button class="ui red button" {{action "logout" }}>Logout</button>
+  {{else}}
+  <p>Log in if you are a employee :</p>
   <form class="ui inline form" {{action "login" @model on="submit" }}>
     <div class="field">
       <Input class="input" type="email" @value={{@model.email}} placeholder="Your email" required />
@@ -19,5 +14,6 @@
     </div>
     <button class="ui green button" type="submit">Log in</button>
   </form>
+  {{/if}}
 </div>
 {{outlet}}
