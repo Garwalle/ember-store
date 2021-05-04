@@ -12,4 +12,8 @@ export default class DashboardRoute extends AbstractRouteRoute {
             });
         }
     }
+
+    @action prepareTransition(oderId) {
+        this.transitionTo('dashboard.prepare', oderId);
+    }
 }

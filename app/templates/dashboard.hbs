@@ -12,11 +12,13 @@
     <img id="dhbAvatar" src="/img/{{@model.connected.firstname}}.png">
 </div>
 
+{{outlet}}
+
 <div id="dhbOrders" class="ui inverted segment">
     <h2>Orders to prepare :</h2>
     <div class="ui centered cards">
         {{#each @model.orders as |order|}}
-        <div class="card">
+        <div class="card" {{action "prepareTransition" order.id}}>
             <div class="content">
                 <div class="header">Order : {{order.id}}</div>
                 <div class="meta">{{order.amount}} $</div>
@@ -30,4 +32,3 @@
     </div>
 </div>
 
-{{outlet}}
