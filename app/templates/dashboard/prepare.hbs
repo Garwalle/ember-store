@@ -1,4 +1,15 @@
 <div id="dhbNestedRoute" class="ui inverted segment">
     <h2>Prepare a command :</h2>
-    <p>Order id : {{@model.order.id}}</p>
+    <div id="dhbPrepare">
+        <div class="dbdChild">
+            <h4>Commande :</h4>
+            <div>n'{{@model.order.id}}</div>
+            <div>{{@model.order.amount}}$</div>
+            <div>nb product :</div>
+        </div>
+        <div class="dbdChild">
+            <h4>Client :</h4>
+            <p>{{@model.client.name}}</p>
+        </div>
+    </div>
 </div>

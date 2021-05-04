@@ -174,3 +174,14 @@ form {
 #dhbNestedRoute>h2 {
     text-decoration: underline;
 }
+
+#dhbPrepare {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dbdChild {
+    background-color: gray;
+    padding: 0.8vh;
+    border-radius: 0.2vh;
+}

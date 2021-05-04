@@ -5,6 +5,7 @@ export default class DashboardPrepareRoute extends Route {
     model(params) {
         return RSVP.hash({
             order: this.store.findRecord('order', params.order_id),
-        });
+            //client: faire un inner join ? ,
+        })
     }
 }
