@@ -1,7 +1,7 @@
 {{page-title "Home"}}
 <div class="ui inverted segment">
   <h1>Welcome to the Store project !</h1>
-  {{#if @model.connected}}
+  {{#if @model.employeeLogged}}
   <button class="ui red button" {{action "logout" }}>Logout</button>
   {{else}}
   <p>Log in if you are a employee :</p>

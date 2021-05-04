@@ -1,15 +1,13 @@
-import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import RSVP from 'rsvp';
 import AbstractRouteRoute from "./abstract-route";
 
 export default class IndexRoute extends AbstractRouteRoute {
-  @service userAuth;
 
   model() {
     if (this.userAuth.user) {
       return RSVP.hash({
-        connected: this.userAuth.user,
+        employeeLogged: this.userAuth.user,
       });
     }
     else {
