@@ -1,7 +1,7 @@
 import RESTAdapter from '@ember-data/adapter/rest';
 
 export default class ApplicationAdapter extends RESTAdapter {
-  host = 'http://solo-2.sts-sio-caen.info';
+  host = 'http://solo-2.sts-sio-caen.info/rest';
   urlForQuery(query, modelName) {
     if (query.sql) {
       query.filter = query.sql;
