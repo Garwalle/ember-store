@@ -6,6 +6,7 @@ export default class ProductSerializer extends JSONSerializer.extend(
 ) {
   attrs = {
     packs: { embedded: 'always' },
+    orderdetails: { embedded: 'always' },
     section: { deserialize: 'records', serialize: 'id' },
   };
 }

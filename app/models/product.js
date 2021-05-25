@@ -9,4 +9,5 @@ export default class ProductModel extends Model {
   @attr promotion;
   @belongsTo('section') section;
   @hasMany('product', { inverse: null }) packs;
+  @hasMany('orderdetail') orderdetails;
 }

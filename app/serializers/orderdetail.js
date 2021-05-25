@@ -12,11 +12,11 @@ export default class OrderdetailSerializer extends JSONSerializer.extend(
 
   extractId(modelClass, resourceHash) {
     return this.compositeKeys.map((key) => {
-        if (resourceHash[key].id) {
-          return resourceHash[key].id;
-        }
-        return resourceHash[key];
-      })
+      if (resourceHash[key].id) {
+        return resourceHash[key].id;
+      }
+      return resourceHash[key];
+    })
       .join(',');
   }
 }

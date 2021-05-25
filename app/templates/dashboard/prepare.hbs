@@ -3,17 +3,18 @@
     <div id="dhbPrepare">
         <div class="dbdChild">
             <h3>Commande :</h3>
-            <p>Number : {{@model.id}}</p>
+            <p>Commande nb : {{@model.id}}</p>
             <p>{{@model.amount}} $</p>
             <p>Number of product : {{@model.itemsNumber}}</p>
         </div>
         <div class="dbdChild">
             <h3>Client :</h3>
-            <p>Number : {{@model.user.id}}</p>
+            <p>Client nb : {{@model.user.id}}</p>
             <p>Name : {{@model.user.name}}</p>
             <p>Email : {{@model.user.email}}</p>
             {{#each @model.orderdetails as |orderdetail|}}
-            <p>Detail : {{orderdetail.prepared}}</p>
+            <p>Detail id: {{orderdetail.id}}</p>
+            <p>Product : {{orderdetail.product.name}}</p>
             {{/each}}
         </div>
     </div>
