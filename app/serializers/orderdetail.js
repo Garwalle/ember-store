@@ -6,6 +6,7 @@ export default class OrderdetailSerializer extends JSONSerializer.extend(
 ) {
   attrs = {
     product: { embedded: 'always' },
+    order: { embedded: 'always' },
   };
   compositeKeys = ['order', 'product'];
 

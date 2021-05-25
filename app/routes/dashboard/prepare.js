@@ -1,11 +1,9 @@
 import Route from '@ember/routing/route';
+import { tracked } from '@glimmer/tracking';
 import RSVP from 'rsvp';
 
 export default class DashboardPrepareRoute extends Route {
     model(params) {
-        return RSVP.hash({
-            order: this.store.findRecord('order', params.order_id),
-            //client: faire un inner join ? ,
-        })
-    }
+            return this.store.findRecord('order', params.order_id, { include: 'user' },  { include: 'orderdetails' } );
+        }
 }

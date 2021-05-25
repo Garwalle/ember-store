@@ -1,7 +1,9 @@
 {{page-title "Dashboard"}}
 
 <div id="dashboardTitleSegment" class="ui inverted segment">
-    <div id="titleDhb"><h1>Dashboard</h1></div>
+    <div id="titleDhb">
+        <h1>Dashboard</h1>
+    </div>
 </div>
 
 <div id="dhbWelcome" class="ui inverted segment">
@@ -11,8 +13,6 @@
     </div>
     <img id="dhbAvatar" src="/public/img/{{@model.connected.firstname}}.png">
 </div>
-
-{{outlet}}
 
 <div id="dhbOrders" class="ui inverted segment">
     <h2>Orders to prepare :</h2>
@@ -32,3 +32,4 @@
     </div>
 </div>
 
+{{outlet}}

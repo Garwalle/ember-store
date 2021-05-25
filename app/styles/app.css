@@ -39,7 +39,7 @@ body {
 #titleSection>h1 {
     text-decoration: underline;
     font-size: 5vh;
-    background-color: rgb(59,175,71,255);
+    background-color: rgb(59, 175, 71, 255);
     border-radius: 2vh;
     padding: 1vh 5vh 1vh 5vh;
     box-shadow: 8px 8px 5px 0.5px rgba(255, 255, 255, 0.13);
@@ -53,7 +53,7 @@ body {
 #titleDhb>h1 {
     text-decoration: underline;
     font-size: 5vh;
-    background-color: rgb(244,22,28,255);
+    background-color: rgb(244, 22, 28, 255);
     border-radius: 2vh;
     padding: 1vh 5vh 1vh 5vh;
     box-shadow: 8px 8px 5px 0.5px rgba(255, 255, 255, 0.13);
@@ -85,14 +85,14 @@ body {
     padding: 2vh;
 }
 
-.sectionHeader>div{
+.sectionHeader>div {
     display: flex;
     justify-content: space-between;
     align-content: center;
     align-items: center;
 }
 
-.sectionHeader>div>h1{
+.sectionHeader>div>h1 {
     padding: 0;
     margin: 0 2vh 0 0;
 }
@@ -167,7 +167,7 @@ form {
 }
 
 #dhbNestedRoute {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(15, 15, 15);
     border: solid white 1px;
 }
 
@@ -178,10 +178,29 @@ form {
 #dhbPrepare {
     display: flex;
     justify-content: space-around;
+    align-content: center;
+    align-self: center;
+    height: 23vh;
 }
 
 .dbdChild {
-    background-color: gray;
-    padding: 0.8vh;
-    border-radius: 0.2vh;
+    margin: 3vh;
+    width: 30%;
+    color: black;
+    background-color: rgb(201, 201, 201);
+    box-shadow: 3px 3px 12px 3px rgba(255, 255, 255, 0.1);
+    padding: 2vw;
+    border-radius: 0.3vw;
+    
+}
+
+.dbdChild>h3 {
+    font-size: 1.7vw;
+    text-decoration: underline;
+}
+
+.dbdChild>p {
+    font-size: 1.3vw;
+    padding: 0;
+    margin: 0;
 }

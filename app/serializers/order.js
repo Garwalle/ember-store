@@ -6,5 +6,6 @@ export default class OrderSerializer extends JSONSerializer.extend(
 ) {
   attrs = {
     orderdetails: { embedded: 'always' },
+    user: { embedded: 'always' },
   };
 }

@@ -2,14 +2,19 @@
     <h2>Prepare a command :</h2>
     <div id="dhbPrepare">
         <div class="dbdChild">
-            <h4>Commande :</h4>
-            <div>n'{{@model.order.id}}</div>
-            <div>{{@model.order.amount}}$</div>
-            <div>nb product :</div>
+            <h3>Commande :</h3>
+            <p>Number : {{@model.id}}</p>
+            <p>{{@model.amount}} $</p>
+            <p>Number of product : {{@model.itemsNumber}}</p>
         </div>
         <div class="dbdChild">
-            <h4>Client :</h4>
-            <p>{{@model.client.name}}</p>
+            <h3>Client :</h3>
+            <p>Number : {{@model.user.id}}</p>
+            <p>Name : {{@model.user.name}}</p>
+            <p>Email : {{@model.user.email}}</p>
+            {{#each @model.orderdetails as |orderdetail|}}
+            <p>Detail : {{orderdetail.prepared}}</p>
+            {{/each}}
         </div>
     </div>
 </div>
