@@ -15,7 +15,10 @@ Router.map(function () {
     this.route('update', { path: 'update/:product_id' });
   });
   this.route('dashboard', function() {
-    this.route('prepare', { path: 'prepare/:order_id' });
+    this.route('prepare', { path: 'prepare/:order_id' }, function() {
+      this.route('cancel', { path: 'cancel/:order_id' });
+      this.route('prepared', { path: 'prepared/:order_id' });
+    });
   });
   this.route('store', function() {
     this.route('sections', function() {

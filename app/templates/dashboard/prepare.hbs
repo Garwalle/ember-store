@@ -6,6 +6,10 @@
             <p>Commande nb : {{@model.id}}</p>
             <p>{{@model.amount}} $</p>
             <p>Number of product : {{@model.itemsNumber}}</p>
+            <div>
+                <LinkTo  class="ui negative button" @route="dashboard.prepare.cancel" @model={{@model.id}}>Cancel</LinkTo >
+                <LinkTo  class="ui positive button" @route="dashboard.prepare.prepared" @model={{@model.id}}>Prepared</LinkTo >
+            </div>
         </div>
         <div class="dbdChild">
             <h3>Client :</h3>
