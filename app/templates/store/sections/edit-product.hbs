@@ -1,22 +1,22 @@
 <form id="sectionNestedRoute" class="ui inverted form" {{ action "editProduct" @model on="submit" }}>
     <div class="field">
         <h3>Edit a product :</h3>
-        <Input class="ui input" @value={{@model.product.name}}/>
+        <Input class="ui input" @value={{@model.name}}/>
     </div>
     <div class="field">
-        <Input class="ui input" @value={{@model.product.comments}}/>
+        <Input class="ui input" @value={{@model.comments}}/>
     </div>
     <div class="field">
-        <Input class="ui input" @value={{@model.product.stock}}/>
+        <Input class="ui input" @value={{@model.stock}}/>
     </div>
     <div class="field">
-        <Input class="ui input" @value={{@model.product.image}}/>
+        <Input class="ui input" @value={{@model.image}}/>
     </div>
     <div class="field">
-        <Input class="ui input" @value={{@model.product.price}}/>
+        <Input class="ui input" @value={{@model.price}}/>
     </div>
     <div class="field">
-        <Input class="ui input" @value={{@model.product.promotion}}/>
+        <Input class="ui input" @value={{@model.promotion}}/>
     </div>
     <button class="ui inverted green button" type="submit">Submit</button>
     <LinkTo class="ui inverted orange button" @route="store.sections" @activeClass="false" @tagName="button">Cancel</LinkTo>
