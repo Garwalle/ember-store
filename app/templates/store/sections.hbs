@@ -1,51 +1,84 @@
 <div id="dashboardTitleSegment" class="ui inverted segment">
-    <div id="titleSection"><h1>Store</h1></div>
+    <div id="titleSection">
+        <h1>Store</h1>
+    </div>
 </div>
 
 <div class="ui inverted segment">
     <div id="sectionTitle">
         <h1>Sections</h1>
-        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"}}><i class="plus icon"></i></LinkTo>
+        <LinkTo class="ui inverted active tiny green icon button" @route="store.sections.add" {{action "scrollToTitle"
+            }}><i class="plus icon"></i></LinkTo><br>
+
     </div>
+
+
+    <div id="addStockButton">
+        <button class="ui primary button" {{action "showAddStock" }}>Add Stock</button>
+    </div>
+
 
     <div class="ui tiny modal" style="color: black;">
         <div class="header">{{this.modalTitle}}</div>
         <div class="content">{{this.modalDesc}}</div>
         <div class="actions">
             <div class="ui blue deny button">No</div>
-            <LinkTo class="ui red deny right labeled icon button" @route={{this.modalRoute}} @model={{this.modalId}}>Yes<i class="trash icon"></i></LinkTo>
+            <LinkTo class="ui red deny right labeled icon button" @route={{this.modalRoute}} @model={{this.modalId}}>
+                Yes<i class="trash icon"></i></LinkTo>
         </div>
     </div>
 
     {{outlet}}
+    <form id="addStockForm" {{ action "addStock" @model.sections on="submit" }}>
+        {{#if this.addStockVisible}}
+        <div class="addStock" id="addStockSubmit">
+            <div class="ui input">
+                <input type="number" id="stockToAdd" placeholder="Number of stock added">
+            </div>
+            <button class="ui green button">Submit</button>
+        </div>
+        {{/if}}
 
-    {{#each @model.sections as |section|}}
-    <div class="section">
-        <div class="sectionHeader">
-            <div><h1>{{section.name}}</h1><div id="loading{{section.id}}" style="display: none;">{{outlet "loading"}}</div></div>
-            <div class="ui inverted buttons">
-                <LinkTo class="ui inverted green button" @route="store.sections.addProduct" @model={{section.id}} @tagName="button"><i class="icon plus"></i>Add product</LinkTo>
-                <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}} {{action "scrollToTitle"}} @tagName="button"><i class="icon pencil alternate"></i>Rename</LinkTo>
-                <button class="ui inverted red button" {{action "deleteModal" section}}><i class="icon trash"></i>Delete</button>
-            </div>
-        </div>
-        <div id="cards" class="ui cards">
-            {{#each section.products as |product|}}
-            {{#if product.comments}}
-            <div class="ui centered card">
-                <div class="image"><img src="/public/img/{{product.image}}.jpg"></div>
-                <div class="content">
-                    <div class="header">{{product.name}}</div>
-                    <div class="meta">{{product.price}} €</div>
+
+
+        {{#each @model.sections as |section|}}
+        <div class="section">
+            <div class="sectionHeader">
+                <div>
+                    <h1>{{section.name}}</h1>
+                    <div id="loading{{section.id}}" style="display: none;">{{outlet "loading"}}</div>
                 </div>
-                <div class="extra content">
-                    <LinkTo class="ui basic blue button" @route="store.sections.editProduct" @model={{product.id}} {{action "scrollToTitle"}}>Edit</LinkTo>
-                    <button class="ui basic red button" {{action "deleteProductModal" product}}>Remove</button>
+                <div class="ui inverted buttons">
+                    <LinkTo class="ui inverted green button" @route="store.sections.addProduct" @model={{section.id}}
+                        @tagName="button"><i class="icon plus"></i>Add product</LinkTo>
+                    <LinkTo class="ui inverted blue button" @route="store.sections.edit" @model={{section.id}}
+                        {{action "scrollToTitle" }} @tagName="button"><i class="icon pencil alternate"></i>Rename
+                    </LinkTo>
+                    <button class="ui inverted red button" {{action "deleteModal" section}}><i
+                            class="icon trash"></i>Delete</button>
                 </div>
             </div>
-            {{/if}}
-            {{/each}}
+
+            <div id="cards" class="ui cards">
+                {{#each section.products as |product|}}
+                {{#if product.comments}}
+                <div class="ui centered card">
+                    <div class="image"><img src="/public/img/{{product.image}}.jpg"></div>
+                    <div class="content">
+                        <div class="header">{{product.name}}</div>
+                        <div class="meta">{{product.price}} €</div>
+                    </div>
+                    <div class="extra content">
+                        <LinkTo class="ui basic blue button" @route="store.sections.editProduct" @model={{product.id}}
+                            {{action "scrollToTitle" }}>Edit</LinkTo>
+                        <button class="ui basic red button" {{action "deleteProductModal" product}}>Remove</button>
+                        <input {{action "productCheck" product}} type="checkbox" class="addStock" id="{{product.id}}">
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
         </div>
-    </div>
-    {{/each}}
+        {{/each}}
+    </form>
 </div>

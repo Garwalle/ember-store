@@ -8,6 +8,9 @@ export default class StoreSectionsController extends Controller {
     @tracked modalDesc;
     @tracked modalRoute;
 
+    listProducts = [];
+    @tracked addStockVisible = false;
+
     @action deleteModal(section) {
         this.modalId = section.id;
         this.modalTitle = "Remove " + section.name + " section's ?";
@@ -23,5 +26,22 @@ export default class StoreSectionsController extends Controller {
         this.modalDesc = "Are you sure you want to delete " + product.name + " ?";
         this.modalRoute = "store.sections.deleteProduct";
         $('.ui.tiny.modal').modal('show');
+    }
+
+    @action showAddStock() {
+        this.addStockVisible = !this.addStockVisible;
+        console.log(this.addStockVisible);
+    }
+
+    @action productCheck(product) {
+        debugger;
+        if (this.listProducts.includes(product)) {
+            let pIndex = this.listProducts.indexOf(product);
+            this.listProducts.slice(pIndex, 1);
+        }
+        else {
+        this.listProducts.push(product);
+        }
+        console.log(this.listProducts);
     }
 }
